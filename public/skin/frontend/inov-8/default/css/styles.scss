@@ -1,0 +1,33 @@
+/** Styles
+ *
+ * sass --watch --load-path="css/sass" --style="compressed" css:css
+ * from /theme folder
+ *
+ **/
+
+@import
+"normalize",
+"vars",
+"fonts",
+"extends",
+"colours",
+"mixins/font-size",
+"mixins/line-height",
+"elements/forms",
+"elements/buttons",
+"components/messages",
+"components/breadcrumbs",
+"components/pager",
+"components/sorter",
+"components/toolbar",
+"components/events",
+"global",
+"header",
+"footer",
+"sidebar",
+"category",
+"product",
+"cart",
+"checkout",
+"account",
+"cms";

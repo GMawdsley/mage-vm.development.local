@@ -1,0 +1,31 @@
+/*------------------------------------------------------------------
+Footer
+-------------------------------------------------------------------*/
+
+.footer-before-container { margin:0 0 3px; text-align:center; }
+
+.form-subscribe { float:left; width:183px; padding: 0 17px 0 0; }
+.form-subscribe-header { color:#d12c01; font-size:11px; font-weight:bold; text-decoration:none; text-transform:uppercase; }
+.form-subscribe label { display:block; margin:6px 0; }
+.form-subscribe input.input-text { width:177px; display:block; }
+.form-subscribe button.button { margin:6px 0 0; float:right; }
+.form-subscribe .validation-advice { width:180px; }
+.form-subscribe .v-fix { text-align:left; padding-right:5px; }
+.form-subscribe a { color:#777; }
+
+.footer-container { margin:0 0 20px; text-align:left; background:#f8f8f8; border:1px solid #cfcfcf; padding:14px 17px 12px; }
+.footer { background:url(../images/optimised/bkg_footer.gif) repeat-y 200px 0; }
+.footer a {}
+.footer a:hover { text-decoration:none; }
+.footer ul,
+.footer ul.links { display:block; float:left; width:150px; margin:0 0 0 19px; padding:0; }
+.footer ul.links li,
+.footer ul li { display:block; vertical-align:top; margin:0 0 5px; padding:0; }
+
+address.copyright { margin-top:6px; }
+
+.footer .switcher-store { float:right; width:184px; background:url(../images/optimised/bkg_store-switch.gif) no-repeat 0 3px; padding-top:21px; }
+.footer .switcher-store label { display:none; }
+.footer .switcher-store select { padding:0; margin-bottom:1px; }
+.footer .switcher-store ul { float:none; width:auto; padding-left:0; margin-left:0; }
+.footer .switcher-store ul .current { display:none; }
