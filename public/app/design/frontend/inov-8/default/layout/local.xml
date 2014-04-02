@@ -45,4 +45,8 @@
 
     </default>
 
+    <customer_logged_in>
+        <remove name="invitation_link_top" />
+    </customer_logged_in>
+
 </layout>

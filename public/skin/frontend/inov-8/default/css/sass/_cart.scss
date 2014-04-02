@@ -2,11 +2,24 @@
 Cart
 -------------------------------------------------------------------*/
 
+.data-table .btn-remove {
+    display:block;
+    margin:0 auto;
+    width:13px;
+    height:12px;
+    font-size:0;
+    line-height:0;
+    background:url(../images/optimised/btn_remove.gif) 0 0 no-repeat;
+    text-indent:-999em;
+    overflow:hidden;
+    cursor:pointer;
+}
+
 /** Shopping Cart **/
 
 .checkout-cart-index .col-main { padding:0; }
 .checkout-cart-index .col-main .page-title { margin:0; }
-.cart-empty { padding:20px; background:#fff; }
+.cart-empty { padding:20px; }
 .cart { background:url(../images/optimised/bkg_cart.gif) repeat-y 100% 0; }
 .cart .title-buttons { padding-right:15px; }
 .cart .messages,

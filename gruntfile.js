@@ -35,14 +35,14 @@ module.exports = function(grunt) {
                     livereload: true
                 }
             },
-            html: {
-                options: {
-                    livereload: true
-                },
-                files: [
-                    '<%= var.appDir %>**/*.{phtml,xml}'
-                ]
-            },
+            //html: {
+            //    options: {
+            //        livereload: true
+            //    },
+            //    files: [
+            //        '<%= var.appDir %>**/*.{phtml,xml}'
+            //    ]
+            //},
             images: {
                 files: ['<%= var.skinImagesDir %>original/**/*.{png,jpg,jpeg,gif}'],
                 tasks: ['newer:imagemin']

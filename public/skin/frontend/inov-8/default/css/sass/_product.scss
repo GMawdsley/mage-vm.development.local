@@ -244,7 +244,7 @@ a.minimal-price-link:hover { text-decoration:underline; }
 .product-pricing li .benefit { font-weight:bold; }
 
 /* Add to Links */
-.add-to-links { margin:5px 0 0; font-size:11px; }
+.add-to-links { @extend %remove-list-style; margin:5px 0 0; font-size:11px; }
 .add-to-links li { margin:2px 0; }
 .add-to-links a { color:#999; }
 .add-to-links a:hover {}

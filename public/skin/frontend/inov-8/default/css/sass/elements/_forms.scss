@@ -2,71 +2,194 @@
 Forms
 -------------------------------------------------------------------*/
 
+$form-label-width: 25%;
+$form-input-box-width: 75%;
+$form-validation-icon-width: 2em;
+
+/* Forms */
+fieldset {
+    border: 0;
+}
+
+legend {
+    display: none;
+}
+
 /** Form Elements **/
+input, select, textarea, button {
+    vertical-align: middle;
+}
 
-input,select,textarea,button { font:12px Arial, Helvetica, sans-serif; vertical-align:middle; color:#444; }
-input.input-text,select,textarea { background:#fff; border:1px solid #c7c7c7; background:#fff url(../images/optimised/bkg_input.gif) 0 0 repeat-x; }
-input.input-text,textarea { padding:2px 2px; background:#fff url(../images/optimised/bkg_input.gif) 0 0 repeat-x; }
-select { padding:1px; }
-select option { padding-right:10px; }
-select.multiselect option { padding:2px 2px; border-bottom:1px solid #bbb; }
-select.multiselect option:last-child { border-top:0; }
-textarea { overflow:auto; resize:vertical; }
-textarea.default-value { color:#ddd; }
+input.input-text, textarea {
+    background-color: $color-form-input-background;
+    border: 1px solid $color-form-input-border;
+    -webkit-appearance: none; //  remove default webkit input styles
+}
+
+input.input-text,
+textarea,
+select.multiselect option {
+    padding: 0.2em;
+}
+
+textarea {
+    overflow: auto;
+    resize: vertical;
+}
+
+textarea.default-value {
+    color: $color-form-textarea-default-value;
+}
+
 input.radio,
-input.checkbox { margin-right:3px; font-size:11px !important; margin-top:2px; vertical-align:top; }
-input.radio { font-size:10px !important; }
-input.qty { width:2.5em !important; }
-input.disabled { background:#f6f6f6 !important; color:#bbb !important; }
+input.checkbox {
+    vertical-align: top;
+}
 
-/* Form Highlight */
-/*input.input-text:focus,select:focus,textarea:focus {}*/
-/*.highlight { background:#eee; }*/
+input.qty {
+    width: 2.5em;
+}
+
+input.disabled {
+    background: $color-form-input-disabled-background;
+    color: $color-form-input-disabled;
+}
 
 /* Form Validation */
-.validation-advice { clear:both; font-size:11px !important; padding:3px 0 0 !important; color:#d91a00 !important; }
+.validation-advice {
+    clear: both;
+    color: $color-form-validation-error;
+    padding: 0.5em 0 0 0;
+}
+
 .product-options .validation-error .options-list,
-.validation-failed { border:1px solid #f47d4e !important; background:#fff7f5 !important; }
 input.input-text.validation-failed,
-textarea.validation-failed { background:#fff7f5 url(../images/optimised/bkg_input-failed.gif) 0 0 repeat-x !important; }
+textarea.validation-failed {
+    border-color: $color-form-validation-error-border;
+    background: $color-form-validation-error-background;
+}
+
 span.validation-passed,
-div.validation-passed { background:url(../images/optimised/icon_ok.gif) 100% 2px no-repeat; padding-right:20px; }
+div.validation-passed {
+    background: url(#{$path-images}/icon_ok.gif) 100% 2px no-repeat;
+    padding-right: 2em;
+}
+
 span.validation-error,
-div.validation-error { background:url(../images/optimised/icon_error.gif) 100% 2px no-repeat; padding-right:20px; }
-.required em { color:#f15c22; margin-right:4px; }
-p.required { margin:0; padding:5px 0 7px; text-align:right; width:620px; font-size:11px; color:#f02800; }
-.form-list .validation-advice { width:250px; margin-right:-250px; }
+div.validation-error {
+    background: url(#{$path-images}/icon_error.gif) 100% 2px no-repeat;
+}
+
+.required em {
+    color: $color-form-required;
+    margin-right: 0.3em;
+}
+
+p.required {
+    margin: 0;
+    padding: 5px $form-validation-icon-width 7px 0;
+    text-align: right;
+    color: $color-form-required;
+}
+
 /* Expiration date and CVV number validation fix */
-.v-fix { float:left; }
-.v-fix .validation-advice { display:block; width:12em; margin-right:-12em; position:relative; }
+.v-fix {
+    float: left;
+}
+.v-fix .validation-advice {
+    display:block;
+    width: 12em;
+    margin-right: -12em;
+    position: relative;
+}
 
 /* Fieldset */
-.fieldset { font-size:12px; margin:0 0 16px; }
-.fieldset p { margin:0 0 1.5em; }
-.fieldset h2.legend { margin:0 0 1.5em; color:#000; }
+.fieldset,
+.fieldset p {
+    margin-bottom: 1.5em;
+}
 
 /* Form lists */
-.form-list {}
+.form-list {
+    @extend %remove-list-style;
+    li {
+        @include clearfix;
+        margin-bottom: 1em;
+        vertical-align: top;
+    }
+    label {
+        float: left;
+        padding: 0 0 0.4em 0;
+        text-align: right;
+        &:after {
+            content: ":";
+        }
+    }
+    .input-box {
+        float: left;
+        width: 100%;
+        margin-bottom: 0.2em;
+        padding-right: $form-validation-icon-width;
+        a {
+            margin-top: 0.5em;
+        }
+    }
+    .value {
+        float: left;
+    }
+    .note {
+        clear: both;
+    }
+    input.input-text,
+    textarea,
+    select {
+        float: left;
+        width: 100%;
+        vertical-align: top;
+    }
+    p {
+        margin: 0;
+    }
+}
 
-.form-list li { margin:0 0 9px; vertical-align:top; }
-.form-list label { float:left; width:225px; padding:2px 15px 0 0; font-size:12px; font-weight:bold; color:#444; text-align:right; }
-.form-list .value { float:left; padding:2px 0 0; }
-.form-list .note { clear:both; font-size:11px; width:380px; margin:0; padding:3px 0 0 240px; }
-.form-list span.label { font-weight:normal; }
-.form-list .input-box { float:left; /* width:256px; */ }
-.form-list .input-box a { font-size:11px; margin-top:4px; }
-.form-list input.input-text,
-.form-list textarea { float:left; width:374px; vertical-align:top; }
-.form-list textarea { width:374px; height:13em; }
-.form-list select { float:left; width:380px; vertical-align:top; }
-.form-list p { margin:0; padding:0 0 0 240px; }
+@include media($small-tablet-v-and-above) {
+    .form-list {
+        label {
+            width: $form-label-width;
+            padding: 0.2em 1.5em 0 0;
+            text-align: right;
+        }
+        .input-box,
+        .value{
+            width: $form-input-box-width;
+        }
+        .input-box {
+            padding-top: 0.2em;
+            padding-bottom: 0;
+            margin-bottom: 0;
+        }
+        .value {
+            padding: 0.2em 0 0;
+        }
+        .note {
+            margin: 0;
+            padding: 0.2em 0 0 $form-label-width;
+        }
+        p {
+            padding: 0 0 0 $form-label-width;
+        }
+        .add-field .input-box {
+            margin-left: $form-label-width;
+        }
+    }
+}
+
 ul.add-row,
-.form-list li.add-row { background:url(../images/optimised/bkg_dots.gif) repeat-x 0 0; margin-top:15px; }
+.form-list li.add-row { background:url(#{$path-images}/bkg_dots.gif) repeat-x 0 0; margin-top:15px; }
 ul.add-row .btn-remove,
 .form-list li.add-row .btn-remove { font-size:0; line-height:0; padding:5px 5px 0 0; margin:0; text-align:right; }
 .form-list .range input.input-text { float:none; width:64px; vertical-align:middle; }
 
-.form-list .add-field .input-box { margin-left:240px }
 .form-list .control { position:relative; vertical-align:top; z-index:1; } /* row with checkbox or radio button */
 .form-list .control label { line-height:16px; }
 .form-list .control .input-box { position:absolute; left:0; margin-left:240px; line-height:16px; padding-top:1px; }
@@ -107,19 +230,46 @@ ul.add-row .btn-remove,
 
 /* Combination of fields */
 .form-list li.fields { margin:0; }
-.form-list li.fields .field { clear:left; padding:0 0 9px; }
+.form-list li.fields .field { @include clearfix; clear:left; padding:0 0 9px; }
 
-/* Overrides for 3columns */
-.col3-layout .form-list .note { padding-left:165px; width:280px; }
-.col3-layout .form-buttons p.back-link,
-.col3-layout .form-list label { width:150px; }
-.col3-layout .form-list input.input-text,
-.col3-layout .form-list textarea { width:274px; }
-.col3-layout .form-list select { width:280px; }
-.col3-layout .form-list .control .input-box { margin-left:165px; }
-.col3-layout .form-list .customer-dob .dob-day input.input-text { width:74px; }
-.col3-layout .form-list .customer-dob .dob-month input.input-text { width:74px; }
-.col3-layout .form-list .customer-dob .dob-year { margin-right:0; }
-.col3-layout .form-list .customer-dob .dob-year input.input-text { width:98px; }
-.col3-layout p.required,
-.col3-layout .form-buttons { width:445px; }
+/*------------------------------------------------------------------
+Buttons
+-------------------------------------------------------------------*/
+
+a.button {
+    background-color: #0f0;
+}
+
+/* Buttons */
+.buttons-set {
+    clear: both;
+    margin: 1em 0;
+    padding-right: $form-validation-icon-width;
+    p.back-link {
+        float: left;
+        margin: 0;
+        @include media($small-tablet-v-and-above) {
+            padding-left: $form-label-width;
+        }
+    }
+}
+
+.buttons-set a.button,
+.buttons-set button.button {
+    float: right;
+}
+
+.buttons-set2 {
+    clear: both;
+    text-align: right;
+}
+
+.form-buttons {
+    margin: 0;
+    .button {
+        float: right;
+    }
+    p.back-link {
+        float: left;
+    }
+}
